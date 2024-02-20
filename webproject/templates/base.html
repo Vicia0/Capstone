@@ -4,11 +4,13 @@
 {% block content %}
     {% load static %}
     <link rel="stylesheet" href = "{% static 'css/base.css'%}" >
-    <div class="details" style="background-color:blue">
-        <a href="{% url 'home' %}"><img src="{% static 'images/logo.jpg' %}"></a>
+    <div class="details" >
+        <a href="{% url 'home' %}"><img src="{% static 'images/shareride-logo.jpeg' %}"></a>
+        <h1 class="h1">Welcome!!</h1>
+        <h6 class="h6">Are you a passenger or a driver?</h6>
         <a href="{% url 'passenger_login' %}"><button name="Passenger">PASSENGER</button></a>
         <p></p>
-        <a href="{% url 'driver_login' %}"><button name="Driver"> DRIVER</button></a>
+        <a href="{% url 'driver_login' %}"><button class="driver" name="Driver"> DRIVER</button></a>
     </div>
 
 {% endblock content %}
