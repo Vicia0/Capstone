@@ -5,6 +5,7 @@
 	<form method="POST" action="">
 		{% csrf_token %}
 		<div class="back"><a href="{% url 'home' %}"><i class="fa fa-arrow-left"></i></a></div><br>
+		<img style="height: 10%;" src="{% static 'images/shareride-logo.jpeg' %}">
 		<h2> PASSENGER LOGIN</h2>
 		<input id="tab-phn-n" type="radio" name="tab" class="email-phn email" checked><label for="tab-phn-n" class="tab">Email</label>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -26,7 +27,7 @@
 		    	<p class="errors" id="messages">{{message}}</p>
 	    	{%endfor%}
 			<div class="down-content">
-				<div class="check" >
+				<div style="margin-top: 45% !important;" class="check" >
 					<input id="check" type="checkbox">
 					<label for="check"> Keep me Signed in</label><br>
 				</div>
