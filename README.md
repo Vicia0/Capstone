@@ -1,8 +1,8 @@
-# S-E-project
+# Capstoneproject
 1. figma design: 
    - https://www.figma.com/file/sUAbvK5nvqO7PwMA17kFol/Share-Ride?node-id=0%3A1
 2. Github link: 
-   - https://github.com/Vicia0/Software-Engineering-project.git
+   - https://github.com/Vicia0/Capstone.git
 
 
 To run the project
