@@ -5,10 +5,10 @@
     <form method="POST" action="">
         {% csrf_token %}
         <div class="nav">
-            <a href="{% url 'passenger_login' %}" class="left_side"><i class="fa fa-arrow-left">-</i></a>
+            <a href="{% url 'passenger_login' %}" style="color: #4B39EF;" class="left_side"><i class="fa fa-arrow-left">-</i></a>
             <h2 class="right_side"> CREATE ACCOUNT</h2>  
         </div> 
-        <div class="create-acc-form">
+        <div style="margin-top: 7%;" class="create-acc-form">
 	  	    <div class="details" >
                 {%for field in form%}
                     {%if field is not form.is_passenger%}
@@ -27,8 +27,8 @@
                     {%endif%}
                 {%endfor%}
             </div>
-            <div style="position: relative; top:20px">
-                <input type="submit" value="Register" class="button" > 
+            <div>
+                <input style="background-color: #4B39EF;margin-top: 10% !important;" type="submit" value="Register" class="button" > 
             </div>
         </div>
 	</form>
@@ -36,8 +36,8 @@
         var form_fields = document.getElementsByTagName('input')
         form_fields['username'].placeholder='username ... ';
         form_fields['full_name'].placeholder='full name ...';
-        form_fields['email'].placeholder='account@gmail.com...';
-        form_fields['phone_number'].placeholder='078...';
+        form_fields['email'].placeholder='vicia@gmail.com...';
+        form_fields['phone_number'].placeholder='67.....';
         form_fields['password1'].placeholder='********';
         form_fields['password2'].placeholder='********';
         for(var field in form_fields){
