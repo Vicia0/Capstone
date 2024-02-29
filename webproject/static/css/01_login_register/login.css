@@ -16,5 +16,5 @@ form .button {text-align:center ; height:40px; width:85%; border-radius: 10px;co
 form .down-content{top:290px; position:fixed;width: 200px}
 form .check{position: relative;left:7px; text-align:left; height:50px;margin-top: 35%;}
 /* Errors */
-form .login-form .errors{color:rgb(173, 5, 5);}
+form .login-form .errors{color: red;}
  a{color:black;}
