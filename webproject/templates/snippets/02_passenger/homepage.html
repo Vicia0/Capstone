@@ -2,11 +2,11 @@
 {% block content %}
     {% load static %}{% load mathfilters %}
     <link rel="stylesheet" href = "{% static 'css/page_templates/dr_homepage.css'%}" >
-    <strong>TRIP DETAILS pass</strong>
-    <div class="form-2nd-cont">
+    <strong style="color: black !important;">TRIP DETAILS </strong>
+    <div style="background-color: white !important;" class="form-2nd-cont">
         <form name="trip_form" method="POST" id="trip_form" >
             {%csrf_token%}
-            <fieldset>
+            <fieldset style="color: black !important; border-color: white !important; border: 0%; background-color: white !important;">
             <div class="details-container" >
                 <div class="page-group1">
                     Current location
@@ -34,22 +34,22 @@
             {%endfor%}
             </fieldset>
             <div class="button-container">
-                <button class="button">SUBMIT</button>                             
+                <button style="text-align:center ; height:40px; width:85%; border-radius: 10px;color:white;font-weight: bold;background-color: #4B39EF; border-color: whitesmoke !important; border:none " class="button">SUBMIT</button>                             
             </div>
         </form>
     </div>
     <script>
         //Cascading dropdown list of 2
         var current_location = {
-            "Remera": {"Ndoli Supermarket": [],"Horebu Supermarket": [],"Bank of Kigali bus stop":[], 
+            "Kinanira": {"Ndoli Supermarket": [],"Horebu Supermarket": [],"Bank of Kigali bus stop":[], 
                        "Amahoro Stadium bus stop":[],"Ex Remera Sector Office bus stop":[],"Kwa Rwahama bus stop":[],"Ex KIE bus stop":[]},
-            "Kimironko": {"Igihozo Supermarket": [],"Equity Bank": [],"eMart":[], "Beri Clinic":[],"Beri Clinic":[],
+            "Kanyosha": {"Igihozo Supermarket": [],"Equity Bank": [],"eMart":[], "Beri Clinic":[],"Beri Clinic":[],
                           "Nkubito D.B":[],"Kwa Mushimire Merez Station":[],"Zindiro bus stop":[],"Kwa Ntayinzira bus stop":[],
                           "Azam roundabout moto stop":[],"Azam bus stop":[],"ALU Entrance":[],"ALU Car park":[]}}
         var destination = {
-            "Remera": {"Ndoli Supermarket": [],"Horebu Supermarket": [],"Bank of Kigali bus stop":[], 
+            "Kinanira": {"Ndoli Supermarket": [],"Horebu Supermarket": [],"Bank of Kigali bus stop":[], 
                        "Amahoro Stadium bus stop":[],"Ex Remera Sector Office bus stop":[],"Kwa Rwahama bus stop":[],"Ex KIE bus stop":[]},
-            "Kimironko": {"Igihozo Supermarket": [],"Equity Bank": [],"eMart":[], "Beri Clinic":[],"Beri Clinic":[],
+            "Kanyosha": {"Igihozo Supermarket": [],"Equity Bank": [],"eMart":[], "Beri Clinic":[],"Beri Clinic":[],
                           "Nkubito D.B":[],"Kwa Mushimire Merez Station":[],"Zindiro bus stop":[],"Kwa Ntayinzira bus stop":[],
                           "Azam roundabout moto stop":[],"Azam bus stop":[],"ALU Entrance":[],"ALU Car park":[]}}
         window.onload = function curr() {
