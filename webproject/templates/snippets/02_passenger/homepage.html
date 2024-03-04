@@ -3,10 +3,10 @@
     {% load static %}{% load mathfilters %}
     <link rel="stylesheet" href = "{% static 'css/page_templates/dr_homepage.css'%}" >
     <strong style="color: black !important;">TRIP DETAILS  </strong>
-    <div style="background-color: white !important;" class="form-2nd-cont">
+    <div style="background-color: white !important; height: 70% !important;" class="form-2nd-cont">
         <form name="trip_form" method="POST" id="trip_form" >
             {%csrf_token%}
-            <fieldset style="color: black !important; border-color: red !important; border-radius: 10%; background-color: white !important;">
+            <fieldset style="color: black !important; border: none !important; background-color: white !important;">
             <div class="details-container" >
                 <div class="page-group1">
                     Current location
