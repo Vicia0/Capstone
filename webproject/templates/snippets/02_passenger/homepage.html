@@ -11,24 +11,28 @@
                 <div class="page-group1">
                     Current location
                     <div class="location" >
-                        <select name="area_curr" id="area_curr"><option value="" selected="selected"><em>Select area</em></option></select>
-                        <select name="stop_curr" id="stop_curr"><option value="" selected="selected"><em>Select your first stop</em></option></select>
-                    </div>  
+                        <select name="area_curr" id="area_curr"><option value="" selected="selected"><em>Select area</em></option></select> <br> <br>
+                        <select name="stop_curr" id="stop_curr"><option value="" selected="selected"><em>Select your origin</em></option></select>
+                    </div> 
                 </div>
+                <br><br> 
                 <div class="page-group1">
                     Destination<br>
                     <div class="location">
                         <select name="area_dest" id="area_dest"><option value="" selected="selected"><em>Select area</em></option></select>                         
-                        <select name="stop_dest" id="stop_dest"><option value="" selected="selected"><em>Select your last stop</em></option></select>
+                        <br><br>
+                        <select name="stop_dest" id="stop_dest"><option value="" selected="selected"><em>Select your stop</em></option></select>
                     </div>  
                 </div>
+                <br><br>
                 {%for field in form %}
-                <div class="page-group2">
+                <div style="width: 95%;"  class="page-group2">
                     {{field.label_tag}}<br>
                     {{field}}
                 </div>  
                 {%endfor%}
             </div>
+            <br><br><br>
             {% for message in messages %}
                 <p style="color: red;" id="messages">{{message}}</p>
             {%endfor%}

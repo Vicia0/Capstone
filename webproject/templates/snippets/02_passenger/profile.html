@@ -1,0 +1,20 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/page_templates/page-template.css' %}">
+<body class="page">
+    <div class="web-container">
+        <nav>
+            {% include 'snippets/02_passenger/header.html' %}
+        </nav>
+        <div style="display: flex; align-items: center;justify-content: center;flex-direction: column;padding: 20px 40px;background: red;border-radius: 5px;box-shadow: 0 5px 15px black;" class="box">
+            <img id="uploaded-image" style="width: 100px;height: 100px;border-radius: 50%;object-fit: cover;border: 5px solid #fff;" src="{% static 'images/passenger.png' %}">
+            <label style="padding: 10px;cursor: pointer;background: #7552cc;color: #fff;font-weight: 600;margin: 7px;border-radius: 10px;box-shadow: 0 4px 4px rgb(0, 0, 0,.3);text-transform: uppercase;transition: .5s ease;" for="upload">upload photo</label>
+            <input type="file" id="upload" class="input-upload" onchange="previewImage(event)">
+        </div>
+    </div>
+    <script>
+        function previewImage(event) {
+            var uploadedImage = document.getElementById('uploaded-image');
+            uploadedImage.src = URL.createObjectURL(event.target.files[0]);
+        }
+    </script>
+</body>

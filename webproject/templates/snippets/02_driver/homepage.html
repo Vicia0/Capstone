@@ -2,26 +2,29 @@
 {% block content %}
     {% load static %}{% load mathfilters %}
     <link rel="stylesheet" href = "{% static 'css/page_templates/dr_homepage.css'%}" >
-    <strong>TRIP DETAILS</strong>
-    <div class="form-2nd-cont">
+    </style>
+    <strong style="color: black !important;">TRIP DETAILS</strong>
+    <div style="background-color: white !important; height: 70% !important;" class="form-2nd-cont">
         <form name="trip_form" method="POST" id="trip_form" >
             {%csrf_token%}
-            <fieldset>
+            <fieldset style="color: black !important; border: none !important; background-color: none !important;">
             <div class="details-container" >
                 <div class="page-group1">
                     Current location
                     <div class="location" >
-                        <select name="area_curr" id="area_curr"><option value="" selected="selected"><em>Select area</em></option></select>
+                        <select name="area_curr" id="area_curr"><option value="" selected="selected"><em>Select area</em></option></select><br> <br>
                         <select name="stop_curr" id="stop_curr"><option value="" selected="selected"><em>Select your first stop</em></option></select>
                     </div>  
                 </div>
+                <br><br>
                 <div class="page-group1">
                     Destination<br>
                     <div class="location">
-                        <select name="area_dest" id="area_dest"><option value="" selected="selected"><em>Select area</em></option></select>                         
+                        <select name="area_dest" id="area_dest"><option value="" selected="selected"><em>Select area</em></option></select> <br><br>
+
                         <select name="stop_dest" id="stop_dest"><option value="" selected="selected"><em>Select your last stop</em></option></select>
                     </div>  
-                </div>
+                </div><br>
                 {%for field in form %}
                 <div class="page-group2">
                     {{field.label_tag}}<br>
@@ -34,24 +37,30 @@
             {%endfor%}
             </fieldset>
             <div class="button-container">
-                <button class="button">SUBMIT</button>                             
+                <button style="margin-top: 20% !important; text-align:center ; height:40px; width:85%; border-radius: 10px;color:white;font-weight: bold;background-color: #4B39EF; border-color: whitesmoke !important; border:none " class="button">SUBMIT</button>                             
             </div>
         </form>
     </div>
     <script>
         //Cascading dropdown list of 2
         var current_location = {
-            "Remera": {"Ndoli Supermarket": [],"Horebu Supermarket": [],"Bank of Kigali bus stop":[], 
-                       "Amahoro Stadium bus stop":[],"Ex Remera Sector Office bus stop":[],"Kwa Rwahama bus stop":[],"Ex KIE bus stop":[]},
-            "Kimironko": {"Igihozo Supermarket": [],"Equity Bank": [],"eMart":[], "Beri Clinic":[],"Beri Clinic":[],
-                          "Nkubito D.B":[],"Kwa Mushimire Merez Station":[],"Zindiro bus stop":[],"Kwa Ntayinzira bus stop":[],
-                          "Azam roundabout moto stop":[],"Azam bus stop":[],"ALU Entrance":[],"ALU Car park":[]}}
+            "Kinanira": {"Kira": [],"petit-seminaire": [],"lumiere":[], 
+                       "kioske sangwe":[],"station-KCO":[]},
+            "Kanyosha": {"Kury'1": [],"Kury'2": [],"kury'3-kingstar":[], "kury'4":[],"kury'5-zone":[],
+                          "kury'8":[],"Kury'9":[]},
+            "Ville": {"Tourisme": [],"Mutuelle": [],"Park":[], 
+                       "BRB":[],"Cathedrale":[],"Musi y'igiti":[],"Le Parisien":[],"Palais des arts":[],
+                       "Cafe-Gourmand":[],"Avenue de l'amitie":[],"Avenue de la mission":[],"Boulevard de l'uprona":[],
+                       "Avenue de la mort":[],"Nociature":[],"INSS":[],"Place de l'independance":[],"Jardin Publique":[]}}
         var destination = {
-            "Remera": {"Ndoli Supermarket": [],"Horebu Supermarket": [],"Bank of Kigali bus stop":[], 
-                       "Amahoro Stadium bus stop":[],"Ex Remera Sector Office bus stop":[],"Kwa Rwahama bus stop":[],"Ex KIE bus stop":[]},
-            "Kimironko": {"Igihozo Supermarket": [],"Equity Bank": [],"eMart":[], "Beri Clinic":[],"Beri Clinic":[],
-                          "Nkubito D.B":[],"Kwa Mushimire Merez Station":[],"Zindiro bus stop":[],"Kwa Ntayinzira bus stop":[],
-                          "Azam roundabout moto stop":[],"Azam bus stop":[],"ALU Entrance":[],"ALU Car park":[]}}
+            "Kinanira": {"Kira": [],"petit-seminaire": [],"lumiere":[], 
+                       "kioske sangwe":[],"station-KCO":[]},
+            "Kanyosha": {"Kury'1": [],"Kury'2": [],"kury'3-kingstar":[], "kury'4":[],"kury'5-zone":[],
+                          "kury'8":[],"Kury'9":[]},
+            "Ville": {"Tourisme": [],"Mutuelle": [],"Park":[], 
+                       "BRB":[],"Cathedrale":[],"Musi y'igiti":[],"Le Parisien":[],"Palais des arts":[],
+                       "Cafe-Gourmand":[],"Avenue de l'amitie":[],"Avenue de la mission":[],"Boulevard de l'uprona":[],
+                       "Avenue de la mort":[],"Nociature":[],"INSS":[],"Place de l'independance":[],"Jardin Publique":[]}}
         window.onload = function curr() {
             var area_curr_Sel = document.getElementById("area_curr");
             var stop_curr_Sel = document.getElementById("stop_curr");

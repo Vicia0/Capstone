@@ -4,6 +4,8 @@ from webapp.views_00account_creation import *
 from webapp.views_00login import *
 from webapp.views_02passenger import *
 from webapp.views_01driver import *
+from . import views
+
 
 urlpatterns = [
     # path('', views.index, name = 'index'),
@@ -20,6 +22,7 @@ urlpatterns = [
     # HOMEPAGES
     path("Driver/homepage/", fn_dr_tripdetails, name="driver_homepage"),
     path("Passenger/homepage/", fn_ps_tripdetails, name="passenger_homepage"),
+
     # path('passenger-login/', passenger_login, name = 'passenger-login'),
     # path('home', views.home, name='home')
     # DRIVER LINKS, pages in order
@@ -36,5 +39,10 @@ urlpatterns = [
    
    
     path("Passenger/TripComfirmation/", fn_TripComfirmation, name="TripComfirmation"),
-    path("Passenger/TripDetails/", fn_TripDetails, name="TripDetails")
+    path("Passenger/TripDetails/", fn_TripDetails, name="TripDetails"),
+
+
+    path('profile/', views.profile_view, name='profile')
+
+    
 ]

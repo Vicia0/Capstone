@@ -19,14 +19,14 @@
             <a href="{% url 'driver_login' %}">LOG OUT&nbsp;&nbsp;<i class="fa fa-angle-right"></i></a>
         </div>
     </div>
-    <div class="nav" id="menu-icon">
+    <div style="top: 25% !important;" class="nav" id="menu-icon">
         <div class="left-side">
             <div class="menu-icn" >
-                <span style="font-size:25px;cursor:pointer; z-index:100; position:fixed" onclick="openNav()">&#9776;</span>
+                <span style="font-size:25px;cursor:pointer; z-index:100; position:fixed;color: white;" onclick="openNav()">&#9776;</span>
             </div>
         </div>
         <div class="right-side">
-            <span><strong> Driver {{name}}</strong></span>
+            <span><strong> {{name}}</strong></span>
             <img alt="" class="img-icon" src="{% static 'images/driver.png' %}"  >
         </div>
     </div>
