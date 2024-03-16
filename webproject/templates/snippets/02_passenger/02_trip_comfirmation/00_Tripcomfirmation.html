@@ -45,10 +45,10 @@
                             {{details.3}}
                         </div>        
                     {%else%}
-                        <div class="column left">
+                        <div style="background-color: rgb(107, 139, 247);" class="column left">
                             Request {{details.1}}
                         </div>
-                        <div class="column right">
+                        <div style="background-color: rgb(212, 220, 247);" class="column right">
                             Awaiting Comfirmation
                         </div>        
                     {%endif%}
@@ -58,8 +58,10 @@
                 <p style="color: red;" id="messages">{{message}}</p>
             {%endfor%}
             <div class="button_container" style="top: 230px; text-align:left">
-                <i style="font-size:24px" class="fa">&#xf095;</i> Dial 0303 for Assistance	
-            </div>    
+                <a href="tel:+250785048182">
+                    <i style="font-size:24px" class="fa">&#xf095;</i> Request Help
+                </a>
+            </div>   
         </form> 
     </div>
 

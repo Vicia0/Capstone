@@ -13,12 +13,12 @@
         {%csrf_token%}
         {% if all_approved%}
             {% for request in all_approved %}
-                <div class="roww">   
-                    <div class="column left">
+                <div style="border-color: white !important;background-color: white !important;" class="roww">   
+                    <div style="background-color: rgb(212, 220, 247);" class="column left">
                         <i class="material-icons">&#xe7fd;</i>
                         {{request.passenger}}                        
                     </div>
-                    <div class="column middle"> 
+                    <div style="background-color: rgb(212, 220, 247);" class="column middle"> 
                         {{request.current_area}}
                         ({{request.current_stop}})<br>
                         <i class="material-icons">&#xeb3c;</i>
@@ -26,7 +26,7 @@
                         {{request.destination_area}}
                         ({{request.destination_stop}})
                     </div>
-                    <div class="column right"> 
+                    <div style="background-color: rgb(212, 220, 247);" class="column right"> 
                         {{request.d_time}}
                         <br>{{request.d_date}}
                     </div>
@@ -42,9 +42,10 @@
         {% for message in messages %}
             <p style="color: red;" id="messages">{{message}}</p>
         {%endfor%}
-        <div style="position:inherit; bottom:-40%; width:110%; left:-2%">
-            <button type="checkbox" id="start" name="start" value="start_r" class="button">Start Ride</button>
-            &nbsp; &nbsp; &nbsp; <button type="checkbox" id="cancel" name="cancel" value="cancel_r" class="button">Cancel Ride</button>
+        <div style="position:inherit; bottom:-40%; width:110%; left:-2%;margin-top: 30%;">
+            <button style="text-align:center ; height:40px; width:40%; border-radius: 10px;color:white;font-weight: bold;background-color: #4B39EF; border-color: whitesmoke !important; border:none " type="checkbox" id="start" name="start" value="start_r" class="button">Start Ride</button>
+            &nbsp; &nbsp; &nbsp; 
+            <button style="text-align:center ; height:40px; width:40%; border-radius: 10px;color:white;font-weight: bold;background-color: #4B39EF; border-color: whitesmoke !important; border:none;margin-left: 6%;" type="checkbox" id="cancel" name="cancel" value="cancel_r" class="button">Cancel Ride</button>
         </div>
     </form>
 {% endblock anothercontent %}

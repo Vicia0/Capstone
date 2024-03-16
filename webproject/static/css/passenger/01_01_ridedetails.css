@@ -9,11 +9,11 @@
 
 .page .headrow .col{float: left;padding: 10px;height: 85%; color:navy;font-size:small;text-align: left;}
 .page .headrow .col.left_side{width:20% }
-.page .headrow .col.right_side{width:61% }
+.page .headrow .col.right_side{width:71% }
 
 
 
-.page .page-group .row{height: 35px;width: 100%}
+.page .page-group .row{height: 35px;width: 100%;}
 
 .page .page-group .column{float: left;padding: 10px;height: 85%; color:navy;font-size: x-small;}
 .page .page-group .column.left{width:20% ;background-color: rgb(0, 255, 255,0.5);}

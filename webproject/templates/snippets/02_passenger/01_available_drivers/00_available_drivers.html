@@ -6,15 +6,16 @@
     <link rel="stylesheet" href = "{% static 'css/passenger/01_00_available_drivers.css'%}" >
     <div class="headrow">
         <div class="col left_side">
-            <a href="{% url 'passenger_homepage' %}" ><i class="fa fa-arrow-left">-</i></a>
+            <a href="{% url 'passenger_homepage' %}" ><i style="color: blue !important;" class="fa fa-arrow-left"></i></a>
         </div>
         <div class="col right_side">
-            <a href="{% url 'available_drivers' %}" >Available Rides</a>
+            <a style="color: black;" href="{% url 'available_drivers' %}" >Available Rides</a>
         </div>
         
     </div>
+    <br><br><br>
     <div style="background-color: white !important;" class="form-2nd-cont">
-        <div class="page">
+        <div style="background-color: white !important;" class="page">
             {% if all_rides %}
 
             {% for ride in all_rides %}
