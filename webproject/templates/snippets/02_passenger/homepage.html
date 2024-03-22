@@ -11,22 +11,22 @@
                 <div class="page-group1">
                     Current location
                     <div class="location" >
-                        <select style="color: rgb(87, 86, 86) !important;" name="area_curr" id="area_curr"><option value="" selected="selected"><em>Select area</em></option></select> <br> <br>
-                        <select style="color: rgb(87, 86, 86) !important;" name="stop_curr" id="stop_curr"><option value="" selected="selected"><em>Select your origin</em></option></select>
+                        <select style="color: rgb(87, 86, 86) !important; background-color: rgb(212, 220, 247);border-radius: 5px;" name="area_curr" id="area_curr"><option value="" selected="selected"><em>Select area</em></option></select> <br> <br>
+                        <select style="color: rgb(87, 86, 86) !important;background-color: rgb(212, 220, 247);border-radius: 5px;" name="stop_curr" id="stop_curr"><option value="" selected="selected"><em>Select your origin</em></option></select>
                     </div> 
                 </div>
                 <br><br> 
                 <div class="page-group1">
                     Destination<br>
                     <div class="location">
-                        <select style="color: rgb(87, 86, 86) !important;" name="area_dest" id="area_dest"><option value="" selected="selected"><em>Select area</em></option></select>                         
+                        <select style="color: rgb(87, 86, 86) !important;background-color: rgb(212, 220, 247);border-radius: 5px;" name="area_dest" id="area_dest"><option value="" selected="selected"><em>Select area</em></option></select>                         
                         <br><br>
-                        <select style="color: rgb(87, 86, 86) !important;" name="stop_dest" id="stop_dest"><option value="" selected="selected"><em>Select your stop</em></option></select>
+                        <select style="color: rgb(87, 86, 86) !important;background-color: rgb(212, 220, 247);border-radius: 5px;" name="stop_dest" id="stop_dest"><option value="" selected="selected"><em>Select your stop</em></option></select>
                     </div>  
                 </div>
                 <br><br>
                 {%for field in form %}
-                <div style="width: 95%;"  class="page-group2">
+                <div style="width: 85%;"  class="page-group2">
                     {{field.label_tag}}<br>
                     {{field}}
                 </div>  

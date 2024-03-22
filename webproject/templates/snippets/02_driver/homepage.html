@@ -4,25 +4,25 @@
     <link rel="stylesheet" href = "{% static 'css/page_templates/dr_homepage.css'%}" >
     </style>
     <strong style="color: black !important;">TRIP DETAILS</strong>
-    <div style="background-color: white !important; height: 70% !important;" class="form-2nd-cont">
+    <div style="background-color: white !important; height: 70% !important;padding-bottom: 40%;" class="form-2nd-cont">
         <form name="trip_form" method="POST" id="trip_form" >
             {%csrf_token%}
-            <fieldset style="color: black !important; border: none !important; background-color: none !important;">
+            <fieldset style="color: rgb(87, 86, 86) !important; border: none !important; background-color: none !important;">
             <div class="details-container" >
                 <div class="page-group1">
                     Current location
                     <div class="location" >
-                        <select name="area_curr" id="area_curr"><option value="" selected="selected"><em>Select area</em></option></select><br> <br>
-                        <select name="stop_curr" id="stop_curr"><option value="" selected="selected"><em>Select your first stop</em></option></select>
+                        <select style="color: rgb(87, 86, 86) !important;background-color: rgb(212, 220, 247);border-radius: 5px;" name="area_curr" id="area_curr"><option value="" selected="selected"><em>Select area</em></option></select><br> <br>
+                        <select style="color: rgb(87, 86, 86) !important;background-color: rgb(212, 220, 247);border-radius: 5px;" name="stop_curr" id="stop_curr"><option value="" selected="selected"><em>Select your first stop</em></option></select>
                     </div>  
                 </div>
-                <br><br>
+                <br>
                 <div class="page-group1">
                     Destination<br>
                     <div class="location">
-                        <select name="area_dest" id="area_dest"><option value="" selected="selected"><em>Select area</em></option></select> <br><br>
+                        <select style="color: rgb(87, 86, 86) !important;background-color: rgb(212, 220, 247);border-radius: 5px;" name="area_dest" id="area_dest"><option value="" selected="selected"><em>Select area</em></option></select> <br><br>
 
-                        <select name="stop_dest" id="stop_dest"><option value="" selected="selected"><em>Select your last stop</em></option></select>
+                        <select style="color: rgb(87, 86, 86) !important;background-color: rgb(212, 220, 247);border-radius: 5px;" name="stop_dest" id="stop_dest"><option value="" selected="selected"><em>Select your last stop</em></option></select>
                     </div>  
                 </div><br>
                 {%for field in form %}
