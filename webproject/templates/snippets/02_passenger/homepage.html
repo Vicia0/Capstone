@@ -3,7 +3,7 @@
     {% load static %}{% load mathfilters %}
     <link rel="stylesheet" href = "{% static 'css/page_templates/dr_homepage.css'%}" >
     <strong style="color: black !important;">TRIP DETAILS  </strong>
-    <div style="background-color: whitesmoke !important; height: 70% !important;" class="form-2nd-cont">
+    <div style="background-color: whitesmoke !important; height: 70% !important;margin-top: 5%;" class="form-2nd-cont">
         <form name="trip_form" method="POST" id="trip_form" >
             {%csrf_token%}
             <fieldset style="color: rgb(87, 86, 86) !important; border: none !important; background-color: whitesmoke !important;">
@@ -25,20 +25,34 @@
                     </div>  
                 </div>
                 <br><br>
-                {%for field in form %}
+                <!-- {%for field in form %}
                 <div style="width: 85%;"  class="page-group2">
                     {{field.label_tag}}<br>
                     {{field}}
                 </div>  
-                {%endfor%}
+                {%endfor%} -->
+                <div class="page-group2">
+                    <label for="num_people">Number of People:</label><br>
+                    <input style="background-color: rgb(212, 220, 247);color: rgb(87, 86, 86);border: none;border-radius: 5px;height: 8%;margin-left: 6%;width: 90%;" type="number" name="number_of_people" value="0" placeholder="Number of people">
+                </div><br>
+                <div class="page-group2">
+                    <label for="d_date">Date:</label><br>
+                    <input style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;background-color: rgb(212, 220, 247);border: none;color: rgb(87, 86, 86);border-radius: 5px;height: 9%;margin-left: 6%;width: 50%;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" type="text" name="d_date" value="03/24/2024" placeholder="Month/Day/Year">
+                </div>
+                <div style="margin-top: -20%;margin-left: 60%;border-radius: 5px;" class="page-group2">
+                    <label for="time">Time:</label><br>
+                    <input style="color: rgb(87, 86, 86);background-color: rgb(212, 220, 247);border: none;border-radius: 5px;height: 9%;margin-left: 14%;width: 75%;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" type="text" name="d_time" value="10:30" placeholder="07:30">
+                </div>
             </div>
             <br><br><br>
             {% for message in messages %}
-                <p style="color: red;" id="messages">{{message}}</p>
+                <div style="position: absolute; z-index: 1; background-color:green; height: 200px; width: 90%; top: 10; left: 5%; ">
+                    <p style="color: red;" id="messages">{{message}}</p>
+                </div>
             {%endfor%}
             </fieldset>
             <div class="button-container">
-                <button style="text-align:center ; height:40px; width:85%; border-radius: 10px;color:white;font-weight: bold;background-color: #4B39EF; border-color: whitesmoke !important; border:none " class="button">SUBMIT</button>                             
+                <button style="text-align:center ; height:40px; width:85%; border-radius: 10px;color:white;font-weight: bold;background-color: #4B39EF; border-color: whitesmoke !important; border:none;margin-top: 10%; " class="button">SUBMIT</button>                             
             </div>
         </form>
     </div>

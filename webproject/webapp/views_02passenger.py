@@ -133,40 +133,44 @@ def fn_TripComfirmation(request):
     all_approved = approved_request.objects.all()
     all_denied = denied_request.objects.all()
     all_req = ride_request.objects.all()
-    possit = ['nop']
+    possit = 'nop'
     details = []
-    if(len(user_passenger)>0):
+    if len(user_passenger) > 0:
         try:
-
-            logged_passenger = user_passenger[(len(user_passenger))-1]
-            passeng[0]=logged_passenger
+            logged_passenger = user_passenger[-1]
+            passeng.append(logged_passenger)
             for x in all_approved:
-                if(x.passenger == logged_passenger):
-                    details = [x.driver, x.ride_id, x.d_date, x.d_time ]
-                    possit[0]=['approved'];break
+                if x.passenger == logged_passenger:
+                    details = [x.driver, x.ride_id, x.d_date, x.d_time]
+                    possit = 'approved'
+                    break
             for x in all_denied:
-                if(x.passenger == logged_passenger):
-                    details = [x.driver, x.ride_id, x.d_date, x.d_time ]
-                    possit[0]=['denied'];break 
-            if(possit[0]!='approved' and possit[0]!='denied'):
+                if x.passenger == logged_passenger:
+                    details = [x.driver, x.ride_id, x.d_date, x.d_time]
+                    possit = 'denied'
+                    break 
+            if possit not in ['approved', 'denied']:
                 for x in all_req:
-                    if(x.passenger == logged_passenger):
-                        details = [x.driver, x.ride_id, x.d_date, x.d_time ]
-                        possit=['None'];break 
-            print('possit:',possit[0])             
-            if(request.POST):
+                    if x.passenger == logged_passenger:
+                        details = [x.driver, x.ride_id, x.d_date, x.d_time]
+                        possit = 'awaiting_confirmation'
+                        break 
+            print('possit:', possit)             
+            if request.method == "POST":
                 return redirect("passenger_homepage")
         except:
             print("System timeout, login ")
     get_username(request)
-    context = {"name":username_p, 'all_approved':all_approved, 'all_denied':all_denied, 'position':possit,'logged_passenger':passeng, 'details':details}
-    return render(request, "02_passenger/02_TripComfirmation.html", context)  # context)
+    context = {"name": username_p, 'all_approved': all_approved, 'all_denied': all_denied, 'position': possit, 'logged_passenger': passeng, 'details': details}
+    return render(request, "02_passenger/02_TripComfirmation.html", context)
+
 
 
 def fn_TripDetails(request):
     context = {"form"}
     get_username(request)
     return render(request, "02_passenger/03_TripDetails.html", {"name":username_p})  # context)
+
 
  
 

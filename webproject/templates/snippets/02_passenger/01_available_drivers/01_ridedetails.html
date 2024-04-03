@@ -9,12 +9,12 @@
             <div class="col left_side">
                 <a style="color: blue;" href="{% url 'available_drivers' %}" ><i class="fa fa-arrow-left">-</i></a>
             </div>
-            <div class="col right_side">
-                <a style="color: black;" href="{% url 'showride' ride.id %}" >Ride Details</a>
+            <div style="margin-top: -13% !important;" class="col right_side">
+                <a style="color: black;margin-left: 40%;" href="{% url 'showride' ride.id %}" >Ride Details</a>
             </div>
             
         </div>
-        <form style="margin-top: 18% !important;" class="page-group" method="POST" action="">
+        <form style="margin-top: 13% !important;" class="page-group" method="POST" action="">
             <fieldset>
                 {% csrf_token %}
                 <div class="row">

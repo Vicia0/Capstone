@@ -4,7 +4,7 @@
     <link rel="stylesheet" href = "{% static 'css/page_templates/dr_homepage.css'%}" >
     </style>
     <strong style="color: black !important;">TRIP DETAILS</strong>
-    <div style="background-color: white !important; height: 70% !important;padding-bottom: 40%;" class="form-2nd-cont">
+    <div style="background-color: whitesmoke !important;margin-top: 3% !important;" class="form-2nd-cont">
         <form name="trip_form" method="POST" id="trip_form" >
             {%csrf_token%}
             <fieldset style="color: rgb(87, 86, 86) !important; border: none !important; background-color: none !important;">
@@ -25,19 +25,46 @@
                         <select style="color: rgb(87, 86, 86) !important;background-color: rgb(212, 220, 247);border-radius: 5px;" name="stop_dest" id="stop_dest"><option value="" selected="selected"><em>Select your last stop</em></option></select>
                     </div>  
                 </div><br>
-                {%for field in form %}
+                <!-- {%for field in form %}
                 <div class="page-group2">
                     {{field.label_tag}}<br>
                     {{field}}
                 </div>  
-                {%endfor%}
+                {%endfor%} -->
+                <div class="page-group2">
+                    Available Seats:<br>
+                    <select style="background-color: rgb(212, 220, 247);color: rgb(87, 86, 86);border: none;border-radius: 5px;height: 6%;margin-left: 6%;width: 90%;" type="number" name="available_seats" class="form-control">
+                        <option value="">Select seats</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div><br>
+                <div class="page-group2">
+                    Car Plate:<br>
+                    <input style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;background-color: rgb(212, 220, 247);border: none;color: rgb(87, 86, 86);border-radius: 5px;height: 6%;margin-left: 6%;width: 50%;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" type="text" name="car_plate" value="RAB 123 A" placeholder="Car plate ..." class="form-control">
+                </div>
+                <div style="margin-top: -19%;margin-left: 60%;border-radius: 5px;" class="page-group2">
+                    Car Color:<br>
+                    <input style="color: rgb(87, 86, 86);background-color: rgb(212, 220, 247);border: none;border-radius: 5px;height: 6%;width: 85%;margin-left: 6%;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" type="text" name="car_color" value="White" placeholder="Car color ..." class="form-control">
+                </div><br>
+                <div class="page-group2">
+                    Date:<br>
+                    <input style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;background-color: rgb(212, 220, 247);border: none;color: rgb(87, 86, 86);border-radius: 5px;height: 6%;margin-left: 6%;width: 50%;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" type="text" name="date" value="03/24/2024" placeholder="Month/Day/Year" class="form-control">
+                </div>
+                <div style="margin-top: -19%;margin-left: 63%;border-radius: 5px;" class="page-group2">
+                    Time:<br>
+                    <input style="color: rgb(87, 86, 86);background-color: rgb(212, 220, 247);border: none;border-radius: 5px;height: 6%;width: 85%;margin-left: 6%;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" type="text" name="time" value="10:30" placeholder="07:30" class="form-control">
+                </div>
             </div>
             {% for message in messages %}
                 <p style="color: red;" id="messages">{{message}}</p>
             {%endfor%}
             </fieldset>
             <div class="button-container">
-                <button style="margin-top: 20% !important; text-align:center ; height:40px; width:85%; border-radius: 10px;color:white;font-weight: bold;background-color: #4B39EF; border-color: whitesmoke !important; border:none " class="button">SUBMIT</button>                             
+                <button style="margin-top: -6% !important; text-align:center ; height:40px; width:85%; border-radius: 10px;color:white;font-weight: bold;background-color: #4B39EF; border-color: whitesmoke !important; border:none " class="button">SUBMIT</button>                             
             </div>
         </form>
     </div>

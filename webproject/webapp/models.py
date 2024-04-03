@@ -22,7 +22,7 @@ class the_ride(models.Model):
     fields = ['driver','car_plate','car_color','origin_area','destination_area', 'destination_stop','date','time','available_seats']
     def __str__(self):
         return self.driver
-
+ 
 class the_tripForm(models.Model):
     d_date = models.DateField()
     d_time = models.TimeField()

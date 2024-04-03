@@ -1,65 +1,51 @@
 {% extends "snippets/02_passenger/page-template.html" %}
 {% block content %}
-    {% load static %}{% load mathfilters %}
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">    <link rel="stylesheet" href = "{% static 'css/page_container.css'%}" >
-    <link rel="stylesheet" href = "{% static 'css/passenger/01_01_ridedetails.css'%}" >
-    <div style="margin-top: -10% !important;" class="form-2nd-cont" style="text-align: center;">
+    <div style="margin-top: -410px !important;" class="form-2nd-cont" style="text-align: center;">
         <div style="margin-bottom: 15%;" class="headrow">
-            <div class="col left_side">
-                <a href="{% url 'available_drivers' %}" ><i style="color: blue !important;" class="fa fa-arrow-left"></i></a>
+            <div style="bottom: 40%;"  class="col left_side">
+                <a style="margin-bottom: 40%;margin-right: 70%;" href="{% url 'available_drivers' %}" ><i style="color: blue !important;" class="fa fa-arrow-left"></i></a>
             </div>
-            <div style="margin-left: 25% !important;margin-top: -13%;color: black !important;" class="col right_side">
-                <a style="color: black !important;" href="{% url 'TripComfirmation'%}" >Trip Comfirmation</a>
+            <div style="margin-left: 17% !important;margin-top: -13%;color: black !important;" class="col right_side">
+                <a style="color: black !important;" href="{% url 'passenger_homepage'%}" >Trip Confirmation</a>
             </div>
-            
         </div>
         <form class="page-group" method="POST" action="">
             {% csrf_token %}
-            <fieldset>       
+            <fieldset style="border: none;">       
                 <div class="row">
-                    {%if position.0 == "approved" %}
-                        <div class="column left">
-                            Request {{details.1}}
-                            Driver: 
-                            Date:
-                            Time:
-                        </div>
-                        <div class="column right">
+                    {% if position == 'approved' %}
+                        <div style="background-color: rgb(107, 139, 247) !important;width: 80%;margin-left: 10%;" class="column right">
                             Approved
-                            {{details.0}}
-                            {{details.2}}
-                            {{details.3}}
-                        </div>                           
-                    {%elif position.0 == "denied"%}
-                        <div class="column left">
-                            Request {{details.1}}
-                            Driver: 
-                            Date:
-                            Time:
-                        </div>
-                        <div class="column right">
+                        </div>  
+                        <div style="background-color: rgb(212, 220, 247) !important;width: 80%;margin-left: 10%;" class="column left">
+                            <!-- Request {{ details.1 }} -->
+                            Driver: {{ details.0 }} <br>
+                            Date: {{ details.2 }} <br>
+                            Time: {{ details.3 }} <br>
+                        </div>                         
+                    {% elif position == 'denied' %}
+                        <div style="background-color: rgb(212, 220, 247) !important;width: 80%;margin-left: 10%;"  class="column right">
                             Denied
-                            {{details.0}}
-                            {{details.2}}
-                            {{details.3}}
-                        </div>        
-                    {%else%}
-                        <div style="background-color: rgb(107, 139, 247);" class="column left">
-                            Request {{details.1}}
+                        </div>   
+                        <div style="background-color: rgb(107, 139, 247) !important;width: 80%;margin-left: 10%;" class="column left">
+                            <!-- Request {{ details.1 }} -->
+                            Driver: {{ details.0 }}
+                            Date: {{ details.2 }}
+                            Time: {{ details.3 }}
+                        </div>     
+                    {% else %}
+                        <div style="background-color: rgb(107, 139, 247) !important;" class="column left">
+                            Awaiting Confirmation
                         </div>
-                        <div style="background-color: rgb(212, 220, 247);" class="column right">
-                            Awaiting Comfirmation
+                        <div style="background-color: rgb(212, 220, 247) !important;" class="column right">
+                            Request {{ details.1 }}
                         </div>        
-                    {%endif%}
+                    {% endif %}
                 </div>
             </fieldset>
-            {% for message in messages %}
-                <p style="color: red;" id="messages">{{message}}</p>
-            {%endfor%}
-            <div class="button_container" style="top: 240px; text-align:left">
+            <div class="button_container" style="text-align:left;margin-left: 15%;">
                 <a href="tel:+250785048182" id="help-button">
-                    <i style="font-size:24px" class="fa">&#xf095;</i>
+                    <i style="font-size:24px;margin-top: 85% !important;" class="fa">&#xf095;</i>
                 </a>
             </div>
         </form> 
@@ -85,5 +71,4 @@
             window.location.href = 'tel:+250785048182';
         });
     </script>
-{% endblock content %}
-
+{% endblock %}
