@@ -20,6 +20,18 @@ def profile_view(request):
     # Your view logic goes here
     return render(request, 'snippets/02_passenger/profile.html')
 
+def profile_view(request):
+    # Your view logic goes here
+    return render(request, 'snippets/02_driver/profile.html')
+
+#SETTINGS
+def settings_view(request):
+    # Your view logic goes here
+    return render(request, 'snippets/02_passenger/settings.html')
+
+# def settings_view(request):
+#     # Your view logic goes here
+#     return render(request, 'snippets/02_driver/settings.html')
 
 
 """
