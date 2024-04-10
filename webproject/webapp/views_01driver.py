@@ -4,6 +4,9 @@ from .forms_01driver import online_Drivers#, online_Passengers
 #models
 from .models_00User import User
 from .models import the_ride, ride_request, approved_request, denied_request,pickups_table, dropoff_table
+from django.shortcuts import render, redirect
+from .models import Trip
+from .forms_01driver import RatingForm
 #views login
 from .views_00login import user_passenger, user_driver
 all_passenger_requests = []
@@ -73,6 +76,9 @@ def fn_requests(request):
     context = {"form"}
     get_username(request)
     return render(request, "02_driver/01_00requests.html", {"name":username_d })  # context)
+
+def rating_page(request):
+    return render(request, 'snippets/02_driver/02_stops_dropoffs/rating_page.html') 
 
 
 def fn_active_requests(request): 
@@ -295,4 +301,16 @@ def fn_dropoff(request):
     context = {"name":username_d, 'all_dropsoff':all_dropsoff}
     return render(request, "02_driver/02_01dropoff.html", context)  # context)
  
-
+def rate_trip(request, trip_id):
+    trip = Trip.objects.get(id=trip_id)
+    if request.method == 'POST':
+        form = RatingForm(request.POST)
+        if form.is_valid():
+            # Save the rating to the trip object
+            trip.rating = form.cleaned_data['rating']
+            trip.save()
+            # Redirect the user to the homepage
+            return redirect('driver_homepage')  # Update 'homepage' with the name of your homepage URL pattern
+    else:
+        form = RatingForm()
+    return render(request, 'rating_page.html', {'form': form, 'trip': trip})

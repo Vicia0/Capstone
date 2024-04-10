@@ -5,7 +5,7 @@ from webapp.views_00login import *
 from webapp.views_02passenger import *
 from webapp.views_01driver import *
 from . import views
-
+from webapp.views_01driver import rating_page
 
 urlpatterns = [
     # path('', views.index, name = 'index'),
@@ -30,9 +30,11 @@ urlpatterns = [
     path("Driver/ActiveRequests/", fn_active_requests, name="passenger_active_requests"),
     path("Driver/ApprovedRequests/", fn_approved_requests, name="passenger_approved_requests"),
 
-    
     path("Driver/Stops/", fn_stops, name="passenger_stops"),
     path("Driver/Dropoffs/", fn_dropoff, name="passenger_dropoffs"),
+    path("Driver/Rating/", rating_page, name="rating_page"), 
+    path('rate-trip/<int:trip_id>/', rate_trip, name='rate_trip'),
+    path('Driver/Rating/<int:trip_id>/', rating_page, name='rating_page'),
     # PASSENGER LINKS, pages in order
     path("Passenger/AvailableDrivers/", fn_available_drivers, name="available_drivers"),
     path("Passenger/AvailableDrivers/Showride/<ride_id>", fn_showride, name="showride"),
@@ -42,7 +44,6 @@ urlpatterns = [
     path("Passenger/TripDetails/", fn_TripDetails, name="TripDetails"),
 
 
-    path('profile/', views.profile_view, name='profile')
-
+    path('profile/', views.profile_view, name='profile'),
     
 ]

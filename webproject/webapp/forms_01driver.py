@@ -31,3 +31,8 @@ class online_Passengers(ModelForm):
         'd_date': forms.DateInput(format=('%m/%d/%Y'), attrs={'class':'form-control', 'placeholder':'Select a date', 'type':'date'}),
     }
 
+from django import forms
+
+class RatingForm(forms.Form):
+    rating = forms.IntegerField(label='Rating')
+

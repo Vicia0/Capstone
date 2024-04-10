@@ -1,4 +1,5 @@
 from .models_000_req import *
+from django.contrib.auth.models import User
 # Create your models here.
 
 class the_rideForm(models.Model):
@@ -121,4 +122,19 @@ class dropoff_table(models.Model):
     fields = ['ride_id','driver','request_id','passenger','current_area','current_stop','destination_area', 'destination_stop','d_date','d_time','number_of_people']
     def __str__(self):
         return self.passenger
+
+class Trip(models.Model):
+    driver = models.CharField(max_length=255)
+    origin_area = models.CharField(max_length=255)
+    origin_stop = models.CharField(max_length=255)
+    destination_area = models.CharField(max_length=255)
+    destination_stop = models.CharField(max_length=255)
+    car_plate = models.CharField(max_length=255)
+    car_color = models.CharField(max_length=255)
+    date = models.CharField(max_length=255)
+    time = models.CharField(max_length=255)
+    available_seats = models.CharField(max_length=255)
+
+    def __str__(self):
+        return f"Trip with {self.driver}"
 
